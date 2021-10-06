@@ -36,32 +36,39 @@ public class CreateNewOrganizationTest {
 		WebElement AccountTypeDropDown = driver.findElement(By.name("accounttype"));
 		WebElement IndustryTypeDropDown = driver.findElement(By.name("industry"));
 		WebElement RatingDropDown = driver.findElement(By.name("rating"));
-		WebElement SearchFieldDropDown = driver.findElement(By.name("search_field"));
 		
-		
-		
+		//Step:6 Select Type of account from Account Drop Down
 		Select AccountTypeDD = new Select(AccountTypeDropDown);
 		AccountTypeDD.selectByValue("Other");
 		
+		//Step:7 Select Type of Industry from Industry drop down
 		Select IndustryTypeDD = new Select(IndustryTypeDropDown);
 		IndustryTypeDD.selectByValue("Education");
 		
+		//Step:8 Select Rating from rating drop down
 		Select RatingDD = new Select(RatingDropDown);
 		RatingDD.selectByValue("Active");
 		
+		//Step:8 Click on Save button
 		driver.findElement(By.xpath("//input[@class='crmbutton small save']")).click();
 		Thread.sleep(3000);
 		
+		//Step:9 Click on Organization Link
 		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
-		driver.findElement(By.name("search_text")).sendKeys("Qspiders_Hyderabad");
 		
+		//Step:10 Search the organization
+		driver.findElement(By.name("search_text")).sendKeys("Qspiders_Hyderabad");
+		WebElement SearchFieldDropDown = driver.findElement(By.name("search_field"));
 		Select SearchFieldDD = new Select(SearchFieldDropDown);
-		SearchFieldDD.selectByValue("SearchFieldDD");
+		SearchFieldDD.selectByValue("accountname");
 		driver.findElement(By.name("submit")).click();
-		WebElement OrganizationName = driver.findElement(By.xpath("//a[@title='Organizations' and text()='mouli']"));
+		
+		//Step:11 Verify wheather the Organization is created or not
+		WebElement OrganizationName = driver.findElement(By.xpath("//a[@title='Organizations' and text()='Qspiders_Hyderabad']"));
 		if(OrganizationName.isDisplayed())
 		{
 			Assert.assertTrue(true);
+			System.out.println("Organization created");
 		}
 		
 	}
