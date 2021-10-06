@@ -1,15 +1,14 @@
-package com.vtiger.Contacts;
+package com.vtiger.Contracts;
 
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
-public class CreateContractWithOrganizationTest {
+public class CreateContactsTest {
+	
 	@Test
-	public void CreateContractWithOrganization()
+	public void CreateContact()
 	{
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -31,22 +30,6 @@ public class CreateContractWithOrganizationTest {
 		//Step:5 fill the contract form with first name and last name
 		driver.findElement(By.name("lastname")).sendKeys("nadipena");
 		driver.findElement(By.name("firstname")).sendKeys("Mouli");
-		
-		//Step:6 Select Organization from existing
-		driver.findElement(By.xpath("//td[text()='Organization Name 			']/following-sibling::td/descendant::img")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> AllWindows = driver.getWindowHandles();
-		for(String currentWindow:AllWindows)
-		{
-			String ActualTitle = driver.switchTo().window(currentWindow).getTitle();
-			if("".equals(ActualTitle))
-			{
-				driver.findElement(By.xpath("//a[text()='Qspiders_Hyderabad']")).click();
-			}
-		}
-		driver.switchTo().window(MainWindow);
-		
-		//Step:7 click on save button
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 	}
 
