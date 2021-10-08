@@ -7,23 +7,23 @@ import java.util.Random;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class ReadDataFromExcel {
+public class ReadDataFromExternal {
 	
-	public static void Excel() throws Throwable
+	public static String ReadExcelData(String Sheetname,int row,int cell) throws Throwable
 	{
 		FileInputStream fis = new FileInputStream("./data.xlsx");
 		Workbook wb= WorkbookFactory.create(fis);
-		String excelvalue = wb.getSheet("Sheet1").getRow(0).getCell(0).toString();
-		System.out.println(excelvalue);
+		String excelvalue = wb.getSheet(Sheetname).getRow(row).getCell(cell).toString();
+		return excelvalue;
 	}
 	
-	public static void Propoerties() throws Throwable
+	public static String ReadPropoertiesData(String key) throws Throwable
 	{
 		FileInputStream fis = new FileInputStream("./input.properties");
 		Properties pro = new Properties();
 		pro.load(fis);
-		String propvalue = pro.getProperty("name","incorret key");
-		System.out.println(propvalue);
+		String propvalue = pro.getProperty(key,"incorret key");
+		return propvalue;
 		
 	}
 	public static int RandomNumber()
@@ -33,11 +33,6 @@ public class ReadDataFromExcel {
 		return Randomnumber;
 	}
 	
-	public static void main(String args[]) throws Throwable
-	{
-		ReadDataFromExcel.Excel();
-		ReadDataFromExcel.Propoerties();
-		
-	}
+	
 		
 }
