@@ -2,6 +2,7 @@ package com.prctice;
 
 import java.io.FileInputStream;
 import java.util.Properties;
+import java.util.Random;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -25,13 +26,17 @@ public class ReadDataFromExcel {
 		System.out.println(propvalue);
 		
 	}
+	public static int RandomNumber()
+	{
+		Random r = new Random();
+		int Randomnumber = r.nextInt(100);
+		return Randomnumber;
+	}
 	
 	public static void main(String args[]) throws Throwable
 	{
 		ReadDataFromExcel.Excel();
 		ReadDataFromExcel.Propoerties();
-		
-		
 		
 	}
 		

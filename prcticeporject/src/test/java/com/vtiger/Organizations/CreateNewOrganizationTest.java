@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import com.prctice.ReadDataFromExcel;
+
 public class CreateNewOrganizationTest {
 	
 	public static void main(String arg[]) throws Throwable
@@ -32,7 +34,8 @@ public class CreateNewOrganizationTest {
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 		
 		//Step:5 Fill the new Organization form with Name,rating and Type
-		driver.findElement(By.name("accountname")).sendKeys("Qspiders_Hyderabad");
+		int number = ReadDataFromExcel.RandomNumber();
+		driver.findElement(By.name("accountname")).sendKeys("Qspiders_Hyderabad"+number);
 		WebElement AccountTypeDropDown = driver.findElement(By.name("accounttype"));
 		WebElement IndustryTypeDropDown = driver.findElement(By.name("industry"));
 		WebElement RatingDropDown = driver.findElement(By.name("rating"));
@@ -57,7 +60,7 @@ public class CreateNewOrganizationTest {
 		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
 		
 		//Step:10 Search the organization
-		driver.findElement(By.name("search_text")).sendKeys("Qspiders_Hyderabad");
+		driver.findElement(By.name("search_text")).sendKeys("Qspiders_Hyderabad"+number);
 		WebElement SearchFieldDropDown = driver.findElement(By.name("search_field"));
 		Select SearchFieldDD = new Select(SearchFieldDropDown);
 		SearchFieldDD.selectByValue("accountname");
