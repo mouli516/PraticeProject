@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vtiger.Contacts.CreateContactsTest">
+      <class name="com.vtiger.pratice.TC_048_CreateOrganizationWith_EmailOptOutTest">
         <methods>
-          <include name="CreateContact"/>
+          <include name="TC_048_CreateOrganizationWith_EmailOptOut"/>
         </methods>
-      </class> <!-- com.vtiger.Contacts.CreateContactsTest -->
+      </class> <!-- com.vtiger.pratice.TC_048_CreateOrganizationWith_EmailOptOutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
