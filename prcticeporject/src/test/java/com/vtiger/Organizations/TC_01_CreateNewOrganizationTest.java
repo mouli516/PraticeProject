@@ -25,12 +25,15 @@ public class TC_01_CreateNewOrganizationTest {
 			driver.get(ReadDataFromExternal.ReadPropoertiesData("url"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		} else if (browser.equalsIgnoreCase("firefox")) {
+		}
+		else if (browser.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();
 			driver.get(ReadDataFromExternal.ReadPropoertiesData("url"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		} else {
+		}
+		else 
+		{
 			System.out.println("Please enter correct browser name");
 		}
 
@@ -79,8 +82,7 @@ public class TC_01_CreateNewOrganizationTest {
 		driver.findElement(By.name("submit")).click();
 
 		// Step:11 Verify whether the Organization is created or not
-		WebElement OrganizationName = driver
-				.findElement(By.xpath("//a[@title='Organizations' and text()='Qspiders_Hyderabad']"));
+		WebElement OrganizationName = driver.findElement(By.xpath("//a[@title='Organizations' and text()='Qspiders_Hyderabad']"));
 		if (OrganizationName.isDisplayed()) {
 			Assert.assertTrue(true);
 			System.out.println("Organization created");
