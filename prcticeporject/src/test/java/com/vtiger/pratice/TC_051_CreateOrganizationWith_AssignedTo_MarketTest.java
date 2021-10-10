@@ -1,0 +1,56 @@
+package com.vtiger.pratice;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import com.prctice.ReadDataFromExternal;
+
+public class TC_051_CreateOrganizationWith_AssignedTo_MarketTest {
+
+	WebDriver driver;
+
+	@Test
+	public void TC_051_CreateOrganizationWith_AssignedTo_Market() throws Throwable {
+
+		// step:1 navigate to url
+		String browser = ReadDataFromExternal.ReadPropoertiesData("browser");
+		if (browser.equalsIgnoreCase("chrome")) {
+			driver = new ChromeDriver();
+			driver.get(ReadDataFromExternal.ReadPropoertiesData("url"));
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+			driver.get(ReadDataFromExternal.ReadPropoertiesData("url"));
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		} else {
+			System.out.println("Please enter correct browser name");
+		}
+
+		// Step:2 Login to application
+		driver.findElement(By.name("user_name")).sendKeys(ReadDataFromExternal.ReadPropoertiesData("username"));
+		driver.findElement(By.name("user_password")).sendKeys(ReadDataFromExternal.ReadPropoertiesData("password"));
+		driver.findElement(By.id("submitButton")).click();
+
+		// Step:3 Click on Organization Link
+		driver.findElement(By.xpath("//a[text()='Organizations']")).click();
+
+		// Step:4 Click on + Button
+		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
+
+		// Step:5 fill manadatory details and select Assignto Group(Market)
+		int number = ReadDataFromExternal.RandomNumber();
+		driver.findElement(By.name("accountname")).sendKeys("Qspiders_Hyderabad" + number);
+		driver.findElement(By.xpath("//input[@value='T']")).click();
+
+		// Step:6 Click on Save button
+		driver.findElement(By.xpath("//input[@class='crmbutton small save']")).click();
+	}
+
+}

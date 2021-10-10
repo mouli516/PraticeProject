@@ -29,7 +29,7 @@ public class ReadDataFromExternal {
 	public static int RandomNumber()
 	{
 		Random r = new Random();
-		int Randomnumber = r.nextInt(100);
+		int Randomnumber = r.nextInt(1000);
 		return Randomnumber;
 	}
 	
