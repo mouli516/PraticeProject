@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vtiger.pratice.TC_078_SendSMS_ToOrganizationTest">
+      <class name="com.prctice.DroDownTest">
         <methods>
-          <include name="TC_078_SendSMS_ToOrganization"/>
+          <include name="dropdown"/>
         </methods>
-      </class> <!-- com.vtiger.pratice.TC_078_SendSMS_ToOrganizationTest -->
+      </class> <!-- com.prctice.DroDownTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

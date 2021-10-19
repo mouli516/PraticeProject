@@ -7,17 +7,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LensKart {
+public class Qspiders {
+	
 	
 	public static void main(String args[])
 	{
 		
         ChromeDriver driver = new ChromeDriver();
 		
-		driver.get("https://www.lenskart.com/");
+		driver.get("https://www.google.com/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.name("q")).click();
-		List<WebElement> NoOfOptions = driver.findElements(By.xpath("//ul[@class='trending_list menu-link']/li"));
+		driver.findElement(By.name("q")).sendKeys("qspiders");
+		List<WebElement> NoOfOptions = driver.findElements(By.xpath("//ul/li/div/div/div/span"));
 		
 		for(int i=0;i<=NoOfOptions.size()-1;i++)
 		{
@@ -26,8 +27,6 @@ public class LensKart {
 		}
 		
 	}
-	
-	
 
 
 }
