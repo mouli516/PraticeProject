@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-11T01:44:28 IST" name="Default suite" finished-at="2021-10-11T01:44:48 IST" duration-ms="19880">
+  <suite started-at="2021-10-12T14:05:55 IST" name="Default suite" finished-at="2021-10-12T14:06:23 IST" duration-ms="27593">
     <groups>
     </groups>
-    <test started-at="2021-10-11T01:44:28 IST" name="Default test" finished-at="2021-10-11T01:44:48 IST" duration-ms="19880">
-      <class name="com.vtiger.pratice.TC_075_Organization_MassEdit_Test">
-        <test-method signature="TC_075_Organization_MassEdit()[pri:0, instance:com.vtiger.pratice.TC_075_Organization_MassEdit_Test@1a18644]" started-at="2021-10-11T01:44:28 IST" name="TC_075_Organization_MassEdit" finished-at="2021-10-11T01:44:48 IST" duration-ms="19818" status="PASS">
+    <test started-at="2021-10-12T14:05:55 IST" name="Default test" finished-at="2021-10-12T14:06:23 IST" duration-ms="27593">
+      <class name="com.prctice.DroDownTest">
+        <test-method signature="dropdown()[pri:0, instance:com.prctice.DroDownTest@1a18644]" started-at="2021-10-12T14:05:55 IST" name="dropdown" finished-at="2021-10-12T14:06:23 IST" duration-ms="27542" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_075_Organization_MassEdit -->
-      </class> <!-- com.vtiger.pratice.TC_075_Organization_MassEdit_Test -->
+        </test-method> <!-- dropdown -->
+      </class> <!-- com.prctice.DroDownTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
